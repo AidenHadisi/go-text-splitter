@@ -16,7 +16,7 @@ import (
 )
 ```
 
-#### func split(str, chunkSize) []string;
+#### func Split(str, chunkSize) []string;
 
 Splits the given string into an array of strings with maximum length of `chunkSize`
 
