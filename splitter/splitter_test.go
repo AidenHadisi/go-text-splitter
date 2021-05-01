@@ -27,4 +27,11 @@ func TestSplit(t *testing.T) {
 
 		assert.Equal(t, result, expected)
 	})
+
+	t.Run("unicode/emoji", func(t *testing.T) {
+		result := Split("😁😁 foo bar test", 3)
+		expected := []string{"😁😁", "foo", "bar", "tes", "t"}
+
+		assert.Equal(t, result, expected)
+	})
 }

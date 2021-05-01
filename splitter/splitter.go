@@ -4,6 +4,18 @@ import (
 	"strings"
 )
 
+func lastIndexOf(chars []rune, end int) int {
+	if end >= len(chars) {
+		return -1
+	}
+	for i := end; i > -1; i-- {
+		if string(chars[i]) == " " {
+			return i
+		}
+	}
+	return -1
+}
+
 func findLastMatch(chars []rune, end int) int {
 	length := len(chars)
 
@@ -11,7 +23,7 @@ func findLastMatch(chars []rune, end int) int {
 		return length
 	}
 
-	index := strings.LastIndex(string(chars[:end]), " ")
+	index := lastIndexOf(chars, end)
 	if index == -1 {
 		index = end
 	}
